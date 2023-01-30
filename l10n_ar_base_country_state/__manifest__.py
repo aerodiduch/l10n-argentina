@@ -20,7 +20,7 @@
 {
     "name": "Base Argentinian States (aka Provinces)",
     "category": "L10N AR",
-    "version": "12.0.1.0.0",
+    "version": "15.0.0.0.0",
     "author": "Eynes/E-MIPS",
     "license": "AGPL-3",
     "description": "This module provides states (provinces) for Argentina.",
@@ -31,6 +31,7 @@
     ],
     "data": [
         # "data/country_state_data.xml",
+        "security/ir.model.access.csv",
         "wizard/wizard_install_argentinean_cities_view.xml",
         "views/res_city_view.xml",
     ],

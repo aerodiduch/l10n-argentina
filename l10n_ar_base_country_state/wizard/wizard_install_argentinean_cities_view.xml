@@ -24,7 +24,6 @@
             <field name="name">Install Argentinean Cities</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">wizard.install.argentinean.cities</field>
-            <field name="view_type">form</field>
             <field name="view_mode">form</field>
             <field name="view_id" ref="view_wizard_install_argentinean_cities_form"/>
             <field name="target">new</field>

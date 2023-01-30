@@ -5,13 +5,13 @@
 
 import os
 
-from openerp import _, api, exceptions, fields, models
-from openerp.tools import convert_xml_import
+from odoo import _, api, exceptions, fields, models
+from odoo.tools import convert_xml_import
 
 
 class WizardInstallArgentineanCities(models.TransientModel):
-    _name = 'wizard.install.argentinean.cities'
-    _description = 'Install/Update Argentinean cities from an XML file'
+    _name = "wizard.install.argentinean.cities"
+    _description = "Install/Update Argentinean cities from an XML file"
 
     mode = fields.Selection(
         [
@@ -22,15 +22,14 @@ class WizardInstallArgentineanCities(models.TransientModel):
         default="update",
         required=True,
     )
-    noupdate = fields.Boolean(string='No update?', default=False)
+    noupdate = fields.Boolean(string="No update?", default=False)
 
     def run(self, module, filename, mode, noupdate=False):
         return convert_xml_import(
-            self.env.cr, module,
-            filename, mode=mode,
-            noupdate=noupdate)
+            self.env.cr, module, filename, mode=mode, noupdate=noupdate
+        )
 
-    @api.multi
+    # @api.model
     def button_run(self):
         # get 'grandparent' (module) directory
         module_path = os.path.dirname(os.path.dirname(__file__))
@@ -42,6 +41,7 @@ class WizardInstallArgentineanCities(models.TransientModel):
         filename = os.path.join(module_path, "data/res_city_data.xml")
         if not os.path.exists(filename):
             raise exceptions.Warning(
-                _("Can't import Cities because the XML is missing"))
+                _("Can't import Cities because the XML is missing")
+            )
 
         return self.run(module_name, filename, self.mode, self.noupdate)

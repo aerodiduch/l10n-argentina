@@ -1,2 +1,3 @@
-"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
-access_res_city,res.city user,model_res_city,base.group_user,1,1,1,1
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+l10n_ar_base_country_state.access_res_city,access_res_city,l10n_ar_base_country_state.model_res_city,base.group_user,1,1,1,1
+l10n_ar_base_country_state.access_wizard_install_argentinean_cities,access_wizard_install_argentinean_cities,l10n_ar_base_country_state.model_wizard_install_argentinean_cities,base.group_user,1,1,1,1
